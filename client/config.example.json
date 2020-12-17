@@ -1,0 +1,12 @@
+[
+	{
+		"mountpoint": "/media/dir1",
+		"url": "https://httpmount.example.com",
+		"password": "UqG7HwciAI2MvnsjmKYt0C8f9Bx6bZal"
+	},
+	{
+		"mountpoint": "dir2",
+		"url": "https://httpmount.example.biz",
+		"password": "oTLhacS0RM5PJpkHgZQwV61CNnr47bGs"
+	}
+]

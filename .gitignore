@@ -1,0 +1,6 @@
+**/*.sw[a-p]
+**/.DS_Store
+**/__pycache__
+client/config.json
+server/config.json
+client/mnt
