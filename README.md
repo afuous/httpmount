@@ -15,7 +15,7 @@ The client depends on [FUSE](https://github.com/libfuse/libfuse) and python pack
 * Install [macFUSE](https://github.com/osxfuse/osxfuse/releases)
 * Install [homebrew](https://brew.sh/) and run `brew install pkg-config`
 * Run `pip3 install requests`
-* In a temporary directory, run `git clone https://github.com/libfuse/python-fuse; cd python-fuse; pip install .`
+* In a temporary directory, run `git clone https://github.com/libfuse/python-fuse; cd python-fuse; pip3 install .`
 
 ## Client usage
 Basic usage: `httpmount.py -u <server url> -p <password> <mountpoint>`
