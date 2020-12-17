@@ -46,14 +46,13 @@ class Httpmount(fuse.Fuse):
 
     def main(self):
         options = self.cmdline[0]
-        if options.baseurl is None:
+        if (options.baseurl is None) or (options.password is None):
             self.parser.print_help()
-        if options.password is None:
-            self.parser.print_help()
-        self._baseurl = options.baseurl
-        if self._baseurl[-1] == '/':
-            self._baseurl = self._baseurl[:-1]
-        self._password = options.password
+        else:
+            self._baseurl = options.baseurl
+            if self._baseurl[-1] == '/':
+                self._baseurl = self._baseurl[:-1]
+            self._password = options.password
         fuse.Fuse.main(self)
 
     def cached_request(self, path):
