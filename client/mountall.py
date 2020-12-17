@@ -18,4 +18,4 @@ for obj in config:
     if not ('/' in mountpoint):
         mountpoint = os.path.join(mntDir, mountpoint)
         os.makedirs(mountpoint, exist_ok=True)
-    subprocess.run([scriptFile, '-u', obj['url'], '-p', obj['password'], mountpoint])
+    subprocess.Popen([scriptFile, '-u', obj['url'], '-p', obj['password'], '-f', mountpoint])
