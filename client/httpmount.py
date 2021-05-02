@@ -9,6 +9,7 @@ import json
 import threading
 import collections
 import time
+import dateutil.parser
 
 fuse.fuse_python_api = (0, 2)
 
@@ -137,6 +138,16 @@ class Httpmount(fuse.Fuse):
                         st.st_mode = stat.S_IFREG | 0o400
                         st.st_nlink = 1
                         st.st_size = obj['size']
+                    if ('atime' in obj) and ('mtime' in obj) and ('ctime' in obj):
+                        try:
+                            atime = dateutil.parser.parse(obj['atime']).timestamp()
+                            mtime = dateutil.parser.parse(obj['mtime']).timestamp()
+                            ctime = dateutil.parser.parse(obj['ctime']).timestamp()
+                            st.st_atime = atime
+                            st.st_mtime = mtime
+                            st.st_ctime = ctime
+                        except:
+                            pass
                     found = True
                     break
             if not found:
