@@ -12,10 +12,10 @@ The client depends on [FUSE](https://github.com/libfuse/libfuse) and python pack
 `apt-get install fuse python3-fuse python3-requests`
 
 #### Mac
-* Install [macFUSE](https://github.com/osxfuse/osxfuse/releases)
-* Install [homebrew](https://brew.sh/) and run `brew install pkg-config`
-* Run `pip3 install requests`
-* In a temporary directory, run `git clone https://github.com/libfuse/python-fuse; cd python-fuse; pip3 install .`
+* Install [homebrew](https://brew.sh/)
+* Run `brew install macfuse pkg-config`
+* Run `pip3 install requests fuse-python`
+* To enable the macFUSE kernel extension, follow the steps on the [macFUSE wiki](https://github.com/macfuse/macfuse/wiki/Getting-Started)
 
 ## Client usage
 Basic usage: `httpmount.py -u <server url> -p <password> <mountpoint>`
